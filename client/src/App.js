@@ -17,7 +17,10 @@ import Nav from './components/Nav';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
 // utils
-import { StoreProvider } from './utils/GlobalState';
+// remove StoreProvider and replace it with the new (Redux) Provider
+// import { StoreProvider } from './utils/GlobalState';
+import { Provider } from 'react-redux';
+import store from './utils/store';
 
 
 const httpLink = createHttpLink({
@@ -44,7 +47,8 @@ function App() {
 		<ApolloProvider client={ client }>
 			<Router>
 				<div>
-					<StoreProvider>
+					{/* use the new `Provider` and the new `store` we created */}
+					<Provider store={ store }>
 						<Nav />
 						<Switch>
 							<Route exact path="/" component={ Home } />
@@ -55,7 +59,7 @@ function App() {
 							<Route exact path="/success" component={ Success } />
 							<Route component={ NoMatch } />
 						</Switch>
-					</StoreProvider>
+					</Provider>
 				</div>
 			</Router>
 		</ApolloProvider>
