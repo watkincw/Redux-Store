@@ -1,11 +1,15 @@
 import React from "react";
+// replaces useStoreContext
+import { useDispatch } from 'react-redux';
 // utils
-import { useStoreContext } from '../../utils/GlobalState';
-import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
+import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
+// import { useStoreContext } from '../../utils/GlobalState';
+
 
 const CartItem = ({ item }) => {
-    const [, dispatch] = useStoreContext();
+    // const [state, dispatch] = useStoreContext();
+    const dispatch = useDispatch();
 
     const removeFromCart = item => {
         dispatch({

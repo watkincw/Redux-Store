@@ -14,10 +14,10 @@ import {
 
 // create initialState for the reuder to use
 const initialState = {
-    products = [],
+    products: [],
     currentProduct: {},
-    categories = [],
-    currentCategory = {},
+    categories: [],
+    currentCategory: {},
     // any cart state?
     cart: [],
     cartOpen: true
@@ -101,7 +101,7 @@ export const reducer = (state = initialState, action) => {
     }
 };
 
-// // Not needed anymore
+// // Not needed anymore after redux refactor
 // export function useProductReducer(initialState) {
 //     return useReducer(reducer, initialState);
 // };

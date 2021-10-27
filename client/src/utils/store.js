@@ -1,5 +1,5 @@
 // // New file to create and export the Redux store we want to
-// // use instead of React's useContext
+// // use instead of React's createContext/useContext
 import { createStore } from 'redux';
 import reducer from './reducers';
 
